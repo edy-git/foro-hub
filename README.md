@@ -1,6 +1,6 @@
 <h1 align="center"> FORO HUB - JAVA + SPRING BOOT</h1>
 
-![Imagende portada Java](https://solace.com/wp-content/uploads/2018/12/spring-boot-java.jpg)
+![Imagende portada Java](https://github.com/edy-git/foro-hub/blob/main/img/01-portada.png?raw=true)
 
 ## Descripcion
 Foro-Hub es una plataforma creada a nivel back-end donde se replica la idea de un foro en donde todos los integrantes registrados pueden hacer preguntas, expresar sus dudas, y mandar quejas sobre determinados tópicos estudiados y analizados; todo dentro de un orden y relación previsto por cada usuario registrado.
@@ -40,7 +40,7 @@ En resumen, el objetivo de este proyecto es implementar una API REST con las sig
 2. Abre el proyecto en tu IDE de Java preferido.
 3. Compila y ejecuta el archivo principal  de java para iniciar la aplicación.
 
-##Configuración al crear el proyecto con Spring Initializr
+## Configuración al crear el proyecto con Spring Initializr
 1. Java (versión 17 en adelante)
 2. Maven (Initializr utiliza la versión 4)
 3. Spring Boot
@@ -68,19 +68,21 @@ En resumen, el objetivo de este proyecto es implementar una API REST con las sig
 
 - Una vez modificado la propiedad "cantrasenia" de la tabla "usuarios", de uno de los usuarios en la base de datos, podras autenticarte en Insomnia y generar un token que te permitira hacer las demas consultas CRUD, la cabecera y el Body de autenticacion de tipo JSON en Insomnia se debera ver de la siquiente forma:
 - Requests
+  
   `POST http://localhost:8080/login`
 
 - Body JSON
-  `{
-
+  ```
+  {
   "email": "eddy.rodriguez@example.com",
   "contrasenia": "password123"
-
-  }`
+  }
+  ```
 
 - De esta forma obtendras el Token autogenerado de autenticacion, luego podras hacer las demas consultas, copia ese token de autenticacion para cada requests.
   Por ejemplo para listar los topicos  crea un requests en Insomnia que se vera asi:
 - Requests
+  
   ` GET http://localhost:8080/topicos`
 
 - Dirigete a la cabecera de ese requests que dice "Auth", escoge "Bearer Token" y pega el token que auto generaste para que puedas hacer la consulta de listar los topicos.
@@ -90,25 +92,25 @@ En resumen, el objetivo de este proyecto es implementar una API REST con las sig
 ## Demostracion de la aplicacion
 ### Funciones de la Api Rest desde Swagger
 #### 1.  Inicio de la Api Rest.
-![Swagger-Inicio]()
+![Swagger-Inicio](https://github.com/edy-git/foro-hub/blob/main/img/03-swagger.png?raw=true)
 #### 2. Funciones de los topicos
-![topicos]()
+![topicos](https://github.com/edy-git/foro-hub/blob/main/img/04-swagger.png?raw=true)
 #### 3. Funciones de las respuestas
-![respuestas]()
+![respuestas](https://github.com/edy-git/foro-hub/blob/main/img/05-swagger.png?raw=true)
 #### 4. Funciones de los cursos
-![cursos]()
+![cursos](https://github.com/edy-git/foro-hub/blob/main/img/06-swagger.png?raw=true)
 #### 5. Funcion de Autenticacion/ login
-![login]()
+![login](https://github.com/edy-git/foro-hub/blob/main/img/07-swagger-autenticacion.png?raw=true)
 #### 7. Diagrama de la Base de Datos
-![diagrama]()
+![diagrama](https://github.com/edy-git/foro-hub/blob/main/img/02-diagrama-BD.png?raw=true)
 #### 8. Control de Errores, Excepciones y Seguridad de los datos
 1. Control de Errores y Excepciones
 - En esta aplicacion se ha prestado atención al manejo de errores, para garantizar un comportamiento robusto y una experiencia de usuario fluida, ademas se ah implementando bloques try-catch que previene errores comunes de configuracion y conexion con los datos.
 
-2. Seguridad de los Datos
+2. Seguridad de los datos
 - La Api Rest utiliza Spring Security (Spring Security aporta un conjunto de clases que permite que esta autenticación se realice mediante nombre de usuario y contraseña. Para ello, utiliza la autenticación que proporciona el contenedor o utiliza un servicio de identificación basado en Single Sign On (sólo se identifica una vez) para manejar la autenticación y autorización.
 
-- Los endpoints protegidos requieren un token JWT (JSON Based Token, https://jwt.io/) es un estándar de código abierto basado en JSON para crear tokens de acceso que nos permiten securizar las comunicaciones entre cliente y servidor) válido, estos tiempo limite en el header, para si dar una autorización y acceso a las funciones de la Api Rest.
+- Los endpoints protegidos requieren un token [JWT][4] (JSON Based Token) es un estándar de código abierto basado en JSON para crear tokens de acceso que nos permiten securizar las comunicaciones entre cliente y servidor) válido, estos tiempo limite en el header, para si dar una autorización y acceso a las funciones de la Api Rest.
 
 ## Tecnologías utilizadas
 - Intellij IDEA.
@@ -124,10 +126,11 @@ Este proyecto fue creado por: Eduardo Argana Rodriguez.
 
 >[!IMPORTANT]
 > ¡Siéntete libre de contactarme si tienes alguna pregunta o sugerencia!
->- [LinkedIn][4]
+>- [LinkedIn][5]
 
 ## End
 [1]: https://www.browserling.com/tools/bcrypt/ "Bcrypt"
 [2]: https://insomnia.rest/ "Insomnia"
 [3]: https://swagger.io/tools/swagger-ui/ "Swagger"
-[4]: https://www.linkedin.com/in/eduardo-argana-igs/ "LinkedIn"
+[4]: https://jwt.io/ "JWT"
+[5]: https://www.linkedin.com/in/eduardo-argana-igs/ "LinkedIn"
